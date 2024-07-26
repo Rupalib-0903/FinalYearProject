@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{%block start%}
+</head>
+<body>
+    {% include "nav.html" %}
+
+    <section class="site-banner pt-5">
+        <div class="container">
+            <div class="row pt-2 m-5">
+                <div class="col-lg-6 col-md-12 site-title pt-5">
+                    <h2 class="title-text"> Welcome to</h2>
+                    <h1 class="title-text text-success"><span class="text-dark">Tri</span>CodeTally</h1>
+                    <h4 class="title-text"> The Ultimate Coding Platform</h4>
+                    <p class="text-dark">
+                        Are you an aspiring coder or a seasoned developer looking to conquer coding challenges on platforms like CodeChef, GeeksForGeeks, and Coding Ninja? 
+                        Managing your progress on multiple coding platforms can be a daunting task, but TriCodeTally is here to simplify it for you.</p>
+                        {%if not request.user.is_authenticated %}
+                        <div class="site-buttons py-2">
+                            <a href="/login"><button  class=" px-5 btn btn-lg btn-success">Get Started</button></a>
+                        </div>
+                        {% endif%}
+                    </div>
+                    <div class="col-lg-6 col-md-12 banner-image">
+                        <img src="{% static 'images/competitive.png' %}"
+                        alt="banner" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+    {%endblock%}
+    
